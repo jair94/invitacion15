@@ -1,23 +1,166 @@
 body {
   background: linear-gradient(135deg, #fbc2eb, #a6c1ee);
   font-family: 'Arial', sans-serif;
-  overflow: hidden;
+  overflow: auto;
+}
+
+.overlay {
+  background: rgba(255, 255, 255, 0.85);
+  min-height: 100vh;
+  padding: 30px;
 }
 
 h1 {
-  font-size: 2.5rem;
-  color: #fff;
+  font-size: 3rem;
+  color: #d63384;
+  margin-bottom: 10px;
+  font-family: "Brush Script MT", cursive;
 }
 
-.card {
-  background-color: #fffafc;
+h2 {
+  font-family: "Georgia", "Times New Roman", serif;
+  color: #6f42c1;
+  font-size: 2rem;
+}
+.event-details {
+  margin: 25px auto;
+  padding: 20px 25px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  text-align: left;
+  max-width: 600px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.event-details p {
+  margin: 12px 0;
+}
+
+.event-details .icon {
+  color: #d63384;   /* Rosa elegante */
+  margin-right: 10px;
+  font-size: 1.2rem;
+}
+
+
+.subtitle {
+  font-style: italic;
+  margin: 30px auto;
+  line-height: 1.8;
+  max-width: 650px;
+  font-size: 1.3rem;
+  text-align: justify;
+  padding: 20px 30px;
+  border-left: 5px solid #d63384; /* línea rosa elegante a la izquierda */
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  font-family: "Georgia", "Times New Roman", serif;
+  color: #5a3c6b;
+}
+
+.card-custom {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  padding: 30px;
+  margin: 20px auto;
+  border-left: 5px solid #d63384;
+  max-width: 650px;
+}
+
+.countdown {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #6f42c1;
+  margin: 20px 0;
+}
+
+.map-link {
+  display: inline-block;
+  background: #d63384;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 15px;
+  
+  transition: background 0.3s;
+}
+
+.map-container {
+  margin: 20px auto;
+  max-width: 600px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+.map-link:hover {
+  background: #a61e5f;
 }
 
 .butterfly {
   position: absolute;
   font-size: 2rem;
-  animation: fly 10s linear infinite;
+  color: #d63384;
+  animation: fly 12s linear infinite;
 }
+
+@keyframes fly {
+  0% {
+    transform: translateY(100vh) translateX(0);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  50% {
+    transform: translateY(50vh) translateX(50px);
+  }
+
+  100% {
+    transform: translateY(-10vh) translateX(-50px);
+    opacity: 0;
+  }
+}
+
+.info {
+  margin-top: 30px;
+  padding: 20px;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  font-size: 1.1rem;
+}
+
+.info p {
+  margin: 12px 0;
+}
+
+.info .title {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #d63384;
+  font-family: "Brush Script MT", cursive;
+}
+
+.info .highlight {
+  font-weight: bold;
+  color: #6f42c1;
+}
+
+.info .phone {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #d63384;
+}
+
 
 .butterfly1 {
   left: 10%;
@@ -37,8 +180,27 @@ h1 {
   animation-delay: 4s;
 }
 
-@keyframes fly {
-  0% { transform: translateY(0) rotate(0deg); }
-  50% { transform: translateY(-200px) rotate(180deg); }
-  100% { transform: translateY(0) rotate(360deg); }
+.card {
+  background-color: #fffafc;
+}
+
+.decorative-separator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 25px auto;
+  max-width: 600px;
+}
+
+.decorative-separator::before,
+.decorative-separator::after {
+  content: "";
+  flex: 1;
+  border-bottom: 2px solid #d63384; /* línea rosa elegante */
+  margin: 0 10px;
+}
+
+.decorative-separator span {
+  font-size: 1.5rem;
+  color: #d63384;
 }

@@ -1,30 +1,119 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Invitación de 15 Años</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
   <div class="container text-center my-5">
-    <h1 class="mb-4">✨ Mis 15 Años ✨</h1>
-    <p class="lead">Hoy mis sueños comienzan a brillar, y quiero que estés presente en este día tan especial.</p>
-    <div class="card p-4 shadow-lg rounded-4 border-0">
-      <h2 class="mb-3">Con la bendición de Dios y el amor de mis padres</h2>
-      <p class="mb-4">Tengo el honor de invitarte a celebrar mis quince años</p>
-      <ul class="list-unstyled">
-        <li class="mb-2"><i class="fa-solid fa-church text-danger"></i> <strong>Ceremonia:</strong> Iglesia San José, 3:00 PM</li>
-        <li class="mb-2"><i class="fa-solid fa-glass-cheers text-success"></i> <strong>Recepción:</strong> Salón Los Olivos, 7:00 PM</li>
-      </ul>
-      <p class="fw-bold">¡Será un día inolvidable y me encantaría que me acompañes! 💖</p>
+    <div class="decorative-separator">
+      <span>🦋🌸🦋</span>
     </div>
-    <div class="butterfly butterfly1">🦋</div>
-    <div class="butterfly butterfly2">🦋</div>
-    <div class="butterfly butterfly3">🦋</div>
+    <h1>Te invito a la celelebración Mis 15 Años</h1>
+    <div class="decorative-separator">
+      <span>🦋🌸🦋</span>
+    </div>
+    <p class="subtitle">
+      Con la bendición de Dios y el amor que mi familia me ha dado, me siento feliz de llegar a este momento de mi vida,
+      el día que dejaré atrás mi infancia y comenzaré un nuevo viaje, porque son parte de mi vida y porque simplemente
+      los quiero, es mi deseo que compartan conmigo la alegría de mis 15 años.
+    </p>
+
+    <div class="card-custom">
+      <div class="decorative-separator">
+        <span>🦋🌸🦋</span>
+      </div>
+      <h2>Pilar Stefany Cabra</h2>
+      <div class="event-details">
+        <p><i class="fa-solid fa-people-roof icon"></i> <strong>Padres:</strong> Ignacio Cabra y Blanca Menjura</p>
+
+        <p><i class="fa-solid fa-calendar-days icon"></i> <strong>Fecha:</strong> 13 de septiembre de 2025</p>
+
+        <p><i class="fa-solid fa-clock icon"></i> <strong>Hora:</strong> 8:00 pm</p>
+
+        <p>
+          <i class="fa-solid fa-map-location-dot icon"></i>
+          <strong>Lugar:</strong> Salón de recepciones <em>Estilo y Moda</em><br>
+          Diag. 48 sur #53-92, Barrio Venecia, 2do piso
+        </p>
+      </div>
+
+      <a href="https://www.google.com/maps/search/?api=1&query=Diag+48+sur+%2353-92+Bogotá" target="_blank"
+        class="map-link">
+        <i class="bi bi-map"></i> Ver en Google Maps
+      </a>
+      <div class="map-container">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.922922034162!2d-74.137!3d4.572!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9f7f8d1b9c93%3A0x9b6d9e8d40ff7b14!2sDiag.%2048%20Sur%20%2353-92%2C%20Bogot%C3%A1!5e0!3m2!1ses!2sco!4v1692928595843!5m2!1ses!2sco"
+          width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <div class="decorative-separator">
+        <span>🦋🌸🦋</span>
+      </div>
+      <div class="countdown" id="countdown"></div>
+      <div class="decorative-separator">
+        <span>🦋🌸🦋</span>
+      </div>
+      <div class="info">
+        <p class="title">
+          <i class="fa-solid fa-person-dress text-pink"></i> Ellas Divinas -
+          <i class="fa-solid fa-person text-primary"></i> Ellos Elegantes
+        </p>
+
+        <p>
+          <i class="fa-solid fa-envelope-open text-danger"></i>
+          <span class="highlight">Lluvia de sobres</span>
+        </p>
+
+        <p>
+          <i class="fa-brands fa-whatsapp text-success"></i>
+          <strong>Confirmar asistencia:</strong>
+        </p>
+
+        <p class="phone">312 408 1352 - 313 370 6778</p>
+      </div>
+      <div class="decorative-separator">
+        <span>🦋🌸🦋</span>
+      </div>
+    </div>
   </div>
+  <div class="butterfly butterfly1">🦋</div>
+  <div class="butterfly butterfly2">🦋</div>
+  <div class="butterfly butterfly3">🦋</div>
+  <script>
+    // Fecha del evento
+    const eventDate = new Date("September 13, 2025 20:00:00").getTime();
+
+    const countdown = document.getElementById("countdown");
+
+    setInterval(() => {
+      const now = new Date().getTime();
+      const distance = eventDate - now;
+
+      if (distance <= 0) {
+        countdown.innerHTML = "🎉 ¡El gran día ha llegado! 🎉";
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      countdown.innerHTML = `⏳ Faltan ${days} días, ${hours}h ${minutes}m ${seconds}s`;
+    }, 1000);
+  </script>
+
+  <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
